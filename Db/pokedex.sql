@@ -23,4 +23,11 @@ VALUES (
 );
 
 
+CREATE TABLE ability (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Ability_name VARCHAR(100),
+    Pokemon_Id INT,
+    Discription TEXT(200)
+);
+
 
