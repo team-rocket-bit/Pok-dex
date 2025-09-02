@@ -8,7 +8,7 @@ use App\ErrorHandler;
 use App\PokedexGateway;
 
 // include autoloader
-include_once './vendor/autoload.php';
+include_once '../vendor/autoload.php';
 
 // error handler
 set_exception_handler([ErrorHandler::class, 'handleException']);
