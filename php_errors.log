@@ -1,0 +1,21 @@
+[02-Sep-2025 10:30:48 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:31:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:31:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'bit_academay'@'localhost' (using password: YES) in /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php:24
+Stack trace:
+#0 /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php(24): PDO->__construct('mysql:host=loca...', 'bit_academay', Object(SensitiveParameterValue))
+#1 /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/index.php(11): Database\Database->getConnection()
+#2 {main}
+  thrown in /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php on line 24
+[02-Sep-2025 10:31:10 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:31:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:32:06 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:32:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'bit_academay'@'localhost' (using password: YES) in /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php:24
+Stack trace:
+#0 /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php(24): PDO->__construct('mysql:host=loca...', 'bit_academay', Object(SensitiveParameterValue))
+#1 /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/index.php(11): Database\Database->getConnection()
+#2 {main}
+  thrown in /Users/giorgio/Documents/nexed/deep-dives/pokemon/Pok-dex/classes/Database.php on line 24
+[02-Sep-2025 10:32:14 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:34:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:38:36 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[02-Sep-2025 10:39:25 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
