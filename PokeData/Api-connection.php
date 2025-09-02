@@ -1,7 +1,9 @@
 
 <?php
 
-$apiUrl = "https://pokeapi.co/api/v2/pokemon/ditto";
+require 'db-connection.php';
+
+$apiUrl = "https://pokeapi.co/api/v2/pokemon-habitat";
 
 
 $response = file_get_contents($apiUrl);
@@ -17,8 +19,10 @@ if ($fileSaved === false) {
     die("Error saving data to file.");
 }
 
+$stmt = $pdo->prepare("INSERT IGNORE INTO habitat (name) VALUES (:name)");
+
+foreach ($data['results'] as $habitat) {
+    $stmt->execute([':name' => $habitat['name']]);
+}
 echo "Data fetched and saved successfully.";
 ?>
-
-
-
