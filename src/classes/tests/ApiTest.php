@@ -1,6 +1,6 @@
 <?php
 
-// require test file
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 

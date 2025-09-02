@@ -2,11 +2,8 @@
 
 namespace Tests;
 
-// require test file
-// require_once '../Database.php';
-
 use PHPUnit\Framework\TestCase;
-use Database\Database;
+use App\Database;
 use PDOException;
 
 class DatabaseTest extends TestCase

@@ -4,7 +4,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Database\\": "src/classes/",
+            "App\\": "src/classes/",
             "Tests\\": "src/classes/tests/"
         }
     }

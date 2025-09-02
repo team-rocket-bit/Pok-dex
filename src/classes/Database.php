@@ -1,6 +1,6 @@
 <?php
 
-namespace Database;
+namespace App;
 
 class Database
 {
@@ -21,6 +21,9 @@ class Database
     {
         $dsn = "mysql:host={$this->host};dbname={$this->name}";
 
-        return new \PDO($dsn, $this->user, $this->pass);
+        return new \PDO($dsn, $this->user, $this->pass, [
+            \PDO::ATTR_EMULATE_PREPARES => false,
+            \PDO::ATTR_STRINGIFY_FETCHES => false
+        ]);
     }
 }

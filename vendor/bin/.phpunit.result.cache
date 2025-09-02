@@ -1,1 +1,1 @@
-{"version":2,"defects":{"Tests\\DatabaseTest::testDatabaseConnection":8,"Tests\\DatabaseTest::testDatabaseReturnsErrorIfPasswordIsIncorrect":8},"times":{"Tests\\DatabaseTest::testDatabaseConnection":0.001,"Tests\\DatabaseTest::testDatabaseReturnsErrorIfPasswordIsIncorrect":0}}
+{"version":2,"defects":{"Tests\\DatabaseTest::testDatabaseConnection":8,"Tests\\DatabaseTest::testDatabaseReturnsErrorIfPasswordIsIncorrect":8},"times":{"Tests\\DatabaseTest::testDatabaseConnection":0.001,"Tests\\DatabaseTest::testDatabaseReturnsErrorIfPasswordIsIncorrect":0.001}}
