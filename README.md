@@ -9,9 +9,9 @@ Wij bouwen een API in PHP voor een pokédex met de criteria van de personages ui
 ## Planning
 | Persoon/Tijd | Di 9:00-11:00 | Di 11:00-13:00 | Di 13:00-15:00 | Di 15:00-17:00 | Wo 9:00-11:00 | Wo 11:00-13:00 | Wo 13:00-14:00 | Wo 15:00-17:00 | Do 9:00-11:00 | Do 11:00-13:00 | Do 13:00-15:00 | Do 15:00-17:00 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Dymoreno | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) |  |  |  |  |  |  |
-| Giorgio | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) |  |  |  |  |  |  |
-| Jadon | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) |  |  |  |  |  |  |  |  |
+| Dymoreno | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) |  |  |  |  |  |  |  |
+| Giorgio | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) |  |  |  |  |  |  |  |
+| Jadon |  |  |  |  |  |  |  |  |  |  |  |  |
 | Jenebi | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) |  |  |  |  |  |  |  |  |
 
 [Link naar google docs](https://docs.google.com/document/d/1w8imA5vnc0cpgdo6g6WI5FmB_3q7YbcyOnsT8uq8q6Q/edit?usp=sharing)
