@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 use App\Database;
 use PDOException;
 
+/**
+ * Test de Database connectie
+ */
 class DatabaseTest extends TestCase
 {
     protected Database $database;
@@ -17,6 +20,9 @@ class DatabaseTest extends TestCase
         $this->database = new Database('localhost', 'pokedex', 'bit_academy', 'bit_academy');
     }
 
+    /**
+     * @return void
+     */
     public function testDatabaseConnection()
     {
         // Act
@@ -26,6 +32,9 @@ class DatabaseTest extends TestCase
         $this->assertInstanceOf(\PDO::class, $result);
     }
 
+    /**
+     * @return void
+     */
     public function testDatabaseReturnsErrorIfPasswordIsIncorrect()
     {
         $this->expectException(PDOException::class);
