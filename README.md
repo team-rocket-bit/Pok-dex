@@ -16,6 +16,7 @@ Wij bouwen een API in PHP voor een pokédex met de criteria van de personages ui
 | Jenebi | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Presentatie voor-bereiding | Presentatie voor-bereiding |
 
 [Link naar google docs](https://docs.google.com/document/d/1w8imA5vnc0cpgdo6g6WI5FmB_3q7YbcyOnsT8uq8q6Q/edit?usp=sharing)
+[Link naar presentatie](https://docs.google.com/presentation/d/1_Tm76PjbSLC9WeDnxenGs82tIJmYchhgHLmXnMsdu5c/edit?usp=sharing)
 
 ## Requirements
 1. Zorg ervoor dat je PHP en Composer geinstalleerd hebt
