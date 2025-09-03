@@ -2,12 +2,20 @@
 
 namespace App;
 
+use Gateway\GatewayInterface;
+use Gateway\PokemonGateway;
+
+/**
+ * Controller class
+ * Handles
+ */
 class Controller
 {
-    private $pokedexGateway;
-    public function __construct(PokedexGateway $pokedexGateway)
+    private GatewayInterface $gateway;
+
+    public function __construct(GatewayInterface $gateway)
     {
-        $this->pokedexGateway = $pokedexGateway;
+        $this->gateway = $gateway;
     }
 
     public function processRequest(string $method, ?string $id): void
@@ -21,7 +29,12 @@ class Controller
 
     private function processResourceRequest(string $method, string $id): void
     {
-        $result = $this->pokedexGateway->get($id);
+        // Check if ID is numeric or a name
+        if (is_numeric($id)) {
+            $result = $this->gateway->get($id);
+        } else {
+            $result = $this->gateway->getWithName($id);
+        }
 
         if (!$result) {
             http_response_code(404);
@@ -35,7 +48,7 @@ class Controller
                 break;
 
             case "PUT":
-                $data = (array) json_decode(file_get_contents("php://input"), true);
+                $data = (array)json_decode(file_get_contents("php://input"), true);
 
                 $errors = $this->getValidationErrors($data, false);
                 if (!empty($errors)) {
@@ -44,7 +57,7 @@ class Controller
                     break;
                 }
 
-                $rows = $this->pokedexGateway->update($result, $data);
+                $rows = $this->gateway->update($result, $data);
 
                 // return success code and message
                 echo json_encode([
@@ -54,7 +67,7 @@ class Controller
                 break;
 
             case "DELETE":
-                $rows = $this->pokedexGateway->delete($id);
+                $rows = $this->gateway->delete($id);
 
                 echo json_encode([
                     "message" => "Data for $id deleted",
@@ -72,11 +85,11 @@ class Controller
     {
         switch ($method) {
             case "GET":
-                echo json_encode($this->pokedexGateway->getAll());
+                echo json_encode($this->gateway->getAll());
                 break;
 
             case "POST":
-                $data = (array) json_decode(file_get_contents("php://input"), true);
+                $data = (array)json_decode(file_get_contents("php://input"), true);
 
                 $errors = $this->getValidationErrors($data);
                 if (!empty($errors)) {
@@ -85,7 +98,7 @@ class Controller
                     break;
                 }
 
-                $id = $this->pokedexGateway->create($data);
+                $id = $this->gateway->create($data);
 
                 // return success code and message
                 http_response_code(201);

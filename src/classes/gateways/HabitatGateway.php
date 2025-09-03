@@ -1,0 +1,135 @@
+<?php
+
+namespace Gateway;
+
+use App\Database;
+use Gateway\GatewayInterface;
+
+/**
+ * Handled alle PDO queries naar de database
+ */
+class HabitatGateway implements GatewayInterface
+{
+    private \PDO $conn;
+
+    public function __construct(Database $database)
+    {
+        $this->conn = $database->getConnection();
+    }
+
+    /**
+     * Pakt alle Habitats uit de database
+     * @return array
+     */
+    public function getAll(): array
+    {
+        $sql = "SELECT * FROM habitat";
+
+        $stmt = $this->conn->query($sql);
+
+        $data = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
+        return $data;
+    }
+
+    /**
+     * Voegt een Habitat toe aan de Database
+     * @param array $data
+     * @return string
+     * returned string met de opgeslagen id
+     */
+    public function create(array $data): string
+    {
+        $sql = "INSERT INTO habitat (name) VALUES (:name)";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(':name', $data["name"], \PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return $this->conn->lastInsertId();
+    }
+
+    /**
+     * zoekt naar een Habitat met de meegegeven id
+     * @param string $id
+     * @return array|false
+     */
+    public function get(string $id): array|false
+    {
+        $sql = "SELECT * FROM habitat WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
+    /**
+     * zoekt naar een Habitat met de meegegeven name
+     * @param string $name
+     * @return array|false
+     */
+    public function getWithName(string $name): array|false
+    {
+        $sql = "SELECT * FROM habitat WHERE name = :name";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':name', $name, \PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
+    /**
+     * Update informatie over één Habitat in de database
+     * @param array $current
+     * @param array $new
+     * @return int
+     * returned int met aantal rijen die gewijzigd zijn
+     */
+    public function update(array $current, array $new): int
+    {
+        $sql = "UPDATE habitat SET name = :name WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":name", $new["name"] ?? $current["name"], \PDO::PARAM_STR);
+
+        $stmt->bindValue(":id", $current["id"], \PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $stmt->rowCount();
+    }
+
+    /**
+     * verwijderd een Habitat met de gegeven id
+     * @param string $id
+     * @return int
+     * returned hoeveel rijen er verwijderd zijn
+     */
+    public function delete(string $id): int
+    {
+        $sql = "DELETE FROM habitat WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $stmt->rowCount();
+    }
+}

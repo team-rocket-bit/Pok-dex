@@ -46,7 +46,6 @@ class ApiTest extends TestCase
         // Arrange
         $data = [
             "name" => "Test_subject",
-            "species" => "... Pokemon",
             "height" => 200,
             "weight" => 80,
             "primary_ability_id" => 1,
@@ -84,6 +83,8 @@ class ApiTest extends TestCase
         $result = json_decode($jsonResult, true);
 
         // Assert
+        $this->assertEquals(200, $response->getStatusCode());
+        // echo var_dump($this->getLastPokemonId());
         $this->assertEquals('Test_subject', $result['name']);
     }
 

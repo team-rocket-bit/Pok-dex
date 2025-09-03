@@ -5,7 +5,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/classes/",
-            "Tests\\": "src/classes/tests/"
+            "Tests\\": "src/classes/tests/",
+            "Gateway\\": "src/classes/gateways"
         }
     },
     "require": {
