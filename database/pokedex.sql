@@ -62,9 +62,9 @@ CREATE TABLE pokemon_move
 
 -- Ability table
 INSERT INTO ability (name, description)
-VALUES ('Static',
+VALUES ('static',
         'If a Pokémon with Static is hit by a move making contact, there is a 30% chance the foe will become paralyzed.'),
-       ('Lightning Rod',
+       ('lightning-rod',
         'Lightning Rod forces all single-target Electric-type moves - used by any other Pokémon on the field - to target this Pokémon, and with 100% accuracy. This includes the status move Thunder Wave. The ability is most useful in double/triple battles.
 
         When hit by the move, it deals no damage to the ability-bearer but raises its Special Attack by one stage. Stats can be raised to a maximum of +6 stages each.
