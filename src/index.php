@@ -41,7 +41,7 @@ if (!in_array($parts[1], $allowedCollections)) {
 
 $id = $parts[2] ?? null;
 
-// database connectie met getenv() en fallbacks
+// database connectie
 $user = 'bit_academy';
 $pass = 'bit_academy';
 
