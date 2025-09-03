@@ -13,7 +13,7 @@ use Gateway\PokemonGateway;
 use Gateway\TypeGateway;
 
 // include autoloader
-include_once '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // error handler
 set_exception_handler([ErrorHandler::class, 'handleException']);
@@ -41,8 +41,11 @@ if (!in_array($parts[1], $allowedCollections)) {
 
 $id = $parts[2] ?? null;
 
-// database connectie
-$database = new Database('localhost', 'pokedex', 'bit_academy', 'bit_academy');
+// database connectie met getenv() en fallbacks
+$user = 'bit_academy';
+$pass = 'bit_academy';
+
+$database = new Database('localhost', 'pokedex', $user, $pass);
 
 // geef de juiste Gateway mee aan Controller
 $gateway = chooseGateway($parts[1], $database);
