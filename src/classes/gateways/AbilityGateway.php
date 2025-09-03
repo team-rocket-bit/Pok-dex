@@ -131,11 +131,19 @@ class AbilityGateway implements GatewayInterface
      */
     public function delete(string $id): int
     {
-        $sql = "DELETE FROM ability WHERE id = :id";
+        if (is_numeric($id)) {
+            $sql = "DELETE FROM ability WHERE id = :id";
 
-        $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->prepare($sql);
 
-        $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+            $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+        } else {
+            $sql = "DELETE FROM ability WHERE name = :id";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->bindValue(":id", $id, \PDO::PARAM_STR);
+        }
 
         $stmt->execute();
 

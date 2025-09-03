@@ -11,6 +11,7 @@ use Gateway\GatewayInterface;
 class PokemonGateway implements GatewayInterface
 {
     private \PDO $conn;
+
     public function __construct(Database $database)
     {
         $this->conn = $database->getConnection();
@@ -160,12 +161,19 @@ class PokemonGateway implements GatewayInterface
      */
     public function delete(string $id): int
     {
-        $sql = "DELETE FROM pokemon
-        WHERE id = :id";
+        if (is_numeric($id)) {
+            $sql = "DELETE FROM pokemon WHERE id = :id";
 
-        $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->prepare($sql);
 
-        $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+            $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+        } else {
+            $sql = "DELETE FROM pokemon WHERE name = :id";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->bindValue(":id", $id, \PDO::PARAM_STR);
+        }
 
         $stmt->execute();
 

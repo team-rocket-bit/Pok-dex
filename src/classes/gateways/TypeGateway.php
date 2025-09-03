@@ -122,11 +122,19 @@ class TypeGateway implements GatewayInterface
      */
     public function delete(string $id): int
     {
-        $sql = "DELETE FROM type WHERE id = :id";
+        if (is_numeric($id)) {
+            $sql = "DELETE FROM type WHERE id = :id";
 
-        $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->prepare($sql);
 
-        $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+            $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+        } else {
+            $sql = "DELETE FROM type WHERE name = :id";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->bindValue(":id", $id, \PDO::PARAM_STR);
+        }
 
         $stmt->execute();
 

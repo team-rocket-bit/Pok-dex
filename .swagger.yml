@@ -1,0 +1,291 @@
+# PLAK IN SWAGGER EDITOR
+openapi: 3.0.0
+info:
+  title: Team Rocket API
+  version: 1.0.0
+servers:
+  - url: http://{{baseurl}}
+tags:
+  - name: Pokemon
+  - name: Ability
+  - name: Move
+  - name: Type
+  - name: Habitat
+paths:
+  /pokemon:
+    get:
+      tags:
+        - Pokemon
+      summary: Pokemon List
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Pokemon
+      summary: Create Pokemon
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: postman-pokemon
+                height: '1'
+                weight: '10'
+                primary_ability_id: 1
+                hidden_ability_id: 2
+                primary_type_id: 4
+                habitat_id: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /pokemon/postman-pokemon:
+    put:
+      tags:
+        - Pokemon
+      summary: Update Pokemon
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: updated-post-pokemon
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /pokemon/updated-post-pokemon:
+    delete:
+      tags:
+        - Pokemon
+      summary: Delete Pokemon
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /ability:
+    get:
+      tags:
+        - Ability
+      summary: Ability List
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Ability
+      summary: Create Ability
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: postman-ability
+                description: postman-description
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /ability/postman-ability:
+    put:
+      tags:
+        - Ability
+      summary: Update Ability
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: updated-post-ability
+                description: updated-post-description
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /ability/updated-post-ability:
+    delete:
+      tags:
+        - Ability
+      summary: Delete Ability
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /move:
+    get:
+      tags:
+        - Move
+      summary: Move List
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Move
+      summary: Create Move
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: new-move
+                type_id: '1'
+                category: postman-row
+                power: '80'
+                accuracy: '100'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /move/new-move:
+    put:
+      tags:
+        - Move
+      summary: New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: updated-move
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /move/updated-move:
+    delete:
+      tags:
+        - Move
+      summary: New Request
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /type:
+    get:
+      tags:
+        - Type
+      summary: Type List
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Type
+      summary: Create Type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: new-type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /type/new-type:
+    put:
+      tags:
+        - Type
+      summary: New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: updated-type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /type/updated-type:
+    delete:
+      tags:
+        - Type
+      summary: New Request
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /habitat:
+    get:
+      tags:
+        - Habitat
+      summary: Habit List
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Habitat
+      summary: New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: new-habitat
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /habitat/new-habitat:
+    put:
+      tags:
+        - Habitat
+      summary: New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: updated-habitat
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /habitat/updated-habitat:
+    delete:
+      tags:
+        - Habitat
+      summary: New Request
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
