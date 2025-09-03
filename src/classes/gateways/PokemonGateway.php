@@ -19,6 +19,7 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * Pakt alle Pokemon uit de database
+     *
      * @return array
      */
     public function getAll(): array
@@ -37,7 +38,8 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * Voegt een Pokemon toe aan de Database
-     * @param array $data
+     *
+     * @param  array $data
      * @return string
      * returned string met de opgeslagen id
      */
@@ -78,7 +80,8 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * zoekt naar een pokemon met de meegegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return array|false
      */
     public function get(string $id): array|false
@@ -98,7 +101,8 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * zoekt naar een pokemon met de meegegeven name
-     * @param string $name
+     *
+     * @param  string $name
      * @return array|false
      */
     public function getWithName(string $name): array|false
@@ -117,8 +121,9 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * Update informatie over één pokemon in de database
-     * @param array $current
-     * @param array $new
+     *
+     * @param  array $current
+     * @param  array $new
      * @return int
      * returned int met aantal rijen die gewijzigd zijn
      */
@@ -155,7 +160,8 @@ class PokemonGateway implements GatewayInterface
 
     /**
      * Verwijderd een pokemon met de gegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return int
      * returned hoeveel rijen er verwijderd zijn
      */

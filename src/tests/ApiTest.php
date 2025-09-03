@@ -20,9 +20,11 @@ class ApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->client = new Client([
+        $this->client = new Client(
+            [
             'base_uri' => 'http://deep.dives/pokemon/Pok-dex/'
-        ]);
+            ]
+        );
     }
 
     public function testApiReturnsCorrectStatusCode()
@@ -54,12 +56,14 @@ class ApiTest extends TestCase
         ];
 
         // Act
-        $response = $this->client->request('POST', 'pokemon', [
+        $response = $this->client->request(
+            'POST', 'pokemon', [
             'json' => $data,  // stuurt JSON data via request body
             'headers' => [
                 'Content-Type' => 'application/json'
             ]
-        ]);
+            ]
+        );
 
         $jsonResult = $response->getBody()->getContents();
         $result = json_decode($jsonResult, true);
@@ -100,12 +104,14 @@ class ApiTest extends TestCase
         ];
 
         // Act
-        $response = $this->client->request('PUT', 'pokemon/' . $this->getLastPokemonId(), [
+        $response = $this->client->request(
+            'PUT', 'pokemon/' . $this->getLastPokemonId(), [
             'json' => $data,
             'headers' => [
                 'Content-Type' => 'application/json'
             ]
-        ]);
+            ]
+        );
 
         $jsonResult = $response->getBody()->getContents();
         $result = json_decode($jsonResult, true);

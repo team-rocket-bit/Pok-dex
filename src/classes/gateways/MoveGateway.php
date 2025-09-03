@@ -19,6 +19,7 @@ class MoveGateway implements GatewayInterface
 
     /**
      * Pakt alle Moves uit de database
+     *
      * @return array
      */
     public function getAll(): array
@@ -37,7 +38,8 @@ class MoveGateway implements GatewayInterface
 
     /**
      * Voegt een Move toe aan de Database
-     * @param array $data
+     *
+     * @param  array $data
      * @return string
      * returned string met de opgeslagen id
      */
@@ -69,7 +71,8 @@ class MoveGateway implements GatewayInterface
 
     /**
      * zoekt naar een Move met de meegegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return array|false
      */
     public function get(string $id): array|false
@@ -88,7 +91,8 @@ class MoveGateway implements GatewayInterface
 
     /**
      * zoekt naar een Move met de meegegeven name
-     * @param string $name
+     *
+     * @param  string $name
      * @return array|false
      */
     public function getWithName(string $name): array|false
@@ -107,8 +111,9 @@ class MoveGateway implements GatewayInterface
 
     /**
      * Update informatie over één Move in de database
-     * @param array $current
-     * @param array $new
+     *
+     * @param  array $current
+     * @param  array $new
      * @return int
      * returned int met aantal rijen die gewijzigd zijn
      */
@@ -139,7 +144,8 @@ class MoveGateway implements GatewayInterface
 
     /**
      * verwijderd een Move met de gegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return int
      * returned hoeveel rijen er verwijderd zijn
      */

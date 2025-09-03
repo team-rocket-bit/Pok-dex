@@ -57,15 +57,15 @@ $controller->processRequest($_SERVER['REQUEST_METHOD'], $id);
 function chooseGateway(string $uri, Database $database): GatewayInterface
 {
     switch ($uri) {
-        case 'ability':
-            return new AbilityGateway($database);
-        case 'move':
-            return new MoveGateway($database);
-        case 'type':
-            return new TypeGateway($database);
-        case 'habitat':
-            return new HabitatGateway($database);
-        default:
-            return new PokemonGateway($database);
+    case 'ability':
+        return new AbilityGateway($database);
+    case 'move':
+        return new MoveGateway($database);
+    case 'type':
+        return new TypeGateway($database);
+    case 'habitat':
+        return new HabitatGateway($database);
+    default:
+        return new PokemonGateway($database);
     }
 }

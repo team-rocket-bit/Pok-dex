@@ -19,6 +19,7 @@ class AbilityGateway implements GatewayInterface
 
     /**
      * Pakt alle Abilities uit de database
+     *
      * @return array
      */
     public function getAll(): array
@@ -37,7 +38,8 @@ class AbilityGateway implements GatewayInterface
 
     /**
      * Voegt een Ability toe aan de Database
-     * @param array $data
+     *
+     * @param  array $data
      * @return string
      * returned string met de opgeslagen id
      */
@@ -60,7 +62,8 @@ class AbilityGateway implements GatewayInterface
 
     /**
      * zoekt naar een Ability met de meegegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return array|false
      */
     public function get(string $id): array|false
@@ -79,15 +82,17 @@ class AbilityGateway implements GatewayInterface
 
     /**
      * Update informatie over één Ability in de database
-     * @param array $current
-     * @param array $new
+     *
+     * @param  array $current
+     * @param  array $new
      * @return int
      * returned int met aantal rijen die gewijzigd zijn
      */
 
     /**
      * zoekt naar een Ability met de meegegeven name
-     * @param string $name
+     *
+     * @param  string $name
      * @return array|false
      */
     public function getWithName(string $name): array|false
@@ -125,7 +130,8 @@ class AbilityGateway implements GatewayInterface
 
     /**
      * verwijderd een Ability met de gegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return int
      * returned hoeveel rijen er verwijderd zijn
      */

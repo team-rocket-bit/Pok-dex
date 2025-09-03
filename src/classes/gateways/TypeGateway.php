@@ -19,6 +19,7 @@ class TypeGateway implements GatewayInterface
 
     /**
      * Pakt alle Types uit de database
+     *
      * @return array
      */
     public function getAll(): array
@@ -37,7 +38,8 @@ class TypeGateway implements GatewayInterface
 
     /**
      * Voegt een Type toe aan de Database
-     * @param array $data
+     *
+     * @param  array $data
      * @return string
      * returned string met de opgeslagen id
      */
@@ -56,7 +58,8 @@ class TypeGateway implements GatewayInterface
 
     /**
      * zoekt naar een Type met de meegegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return array|false
      */
     public function get(string $id): array|false
@@ -75,7 +78,8 @@ class TypeGateway implements GatewayInterface
 
     /**
      * zoekt naar een Type met de meegegeven name
-     * @param string $name
+     *
+     * @param  string $name
      * @return array|false
      */
     public function getWithName(string $name): array|false
@@ -94,8 +98,9 @@ class TypeGateway implements GatewayInterface
 
     /**
      * Update informatie over één Type in de database
-     * @param array $current
-     * @param array $new
+     *
+     * @param  array $current
+     * @param  array $new
      * @return int
      * returned int met aantal rijen die gewijzigd zijn
      */
@@ -116,7 +121,8 @@ class TypeGateway implements GatewayInterface
 
     /**
      * verwijderd een Type met de gegeven id
-     * @param string $id
+     *
+     * @param  string $id
      * @return int
      * returned hoeveel rijen er verwijderd zijn
      */
