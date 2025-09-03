@@ -8,12 +8,12 @@ Wij bouwen een API in PHP voor een pokédex met de criteria van de personages ui
  - Swagger editor: https://editor.swagger.io/
 
 ## Planning
-| Persoon/Tijd | Di 9:00-11:00 | Di 11:00-13:00 | Di 13:00-15:00 | Di 15:00-17:00 | Wo 9:00-11:00 | Wo 11:00-13:00 | Wo 13:00-14:00 | Wo 15:00-17:00 | Do 9:00-11:00 | Do 11:00-13:00 | Do 13:00-15:00 | Do 15:00-17:00 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Dymoreno | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | (afwezig) | (afwezig) | (afwezig) | (afwezig) |  |  |  |  |
-| Giorgio | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 6(6u hoog) | Story 6(6u hoog) | Story 6(6u hoog) | Presentatie voor-bereiding | Presentatie voor-bereiding |  |  |
-| Jadon | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) |  |  |  |  |
-| Jenebi | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Presentatie voor-bereiding | Presentatie voor-bereiding |  |  |
+| Persoon/Tijd | Di 9:00-11:00 | Di 11:00-13:00 | Di 13:00-15:00 | Di 15:00-17:00 | Wo 9:00-11:00 | Wo 11:00-13:00 | Wo 13:00-14:00 | Wo 15:00-17:00 | Do 9:00-11:00 | Do 11:00-13:00 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Dymoreno | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | (afwezig) | (afwezig) | (afwezig) | (afwezig) |  |  |
+| Giorgio | Story 2 (4u, hoog) | Story 2 (4u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 5 (6u, hoog) | Story 6(6u hoog) | Story 6(6u hoog) | Story 6(6u hoog) | Presentatie voor-bereiding | Presentatie voor-bereiding |
+| Jadon | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) | (afwezig) |  |  |
+| Jenebi | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Story 5 (8u, hoog) | Presentatie voor-bereiding | Presentatie voor-bereiding |
 
 [Link naar google docs](https://docs.google.com/document/d/1w8imA5vnc0cpgdo6g6WI5FmB_3q7YbcyOnsT8uq8q6Q/edit?usp=sharing)
 
@@ -36,9 +36,9 @@ __3.__ Zet de inhoud van `pokedexFilled.sql`(aangeraden) of `pokedexEmpty.sql` i
 
 
 ## Usage & Functionaliteiten
-__1.__ verander in `src/index.php` bij '// Database connectie' (line 45) jouw MySQL username en wachtwoord in
+__1.__ Zoek in `src/index.php` naar `$user` en `$pass` (line 45), en voer jouw MySQL username en wachtwoord in
 
-__2.__ voer in je Postman/client de gewenste requests uit.
+__2.__ Voer in je Postman/client de gewenste requests uit.
 Bijvoorbeeld: `GET | localhost/pad/naar/repo/pokemon` -> stuurt alle informatie over de opgeslagen pokemon terug
  - Om alle API-endpoints te zien, bezoek dan de [swagger editor](https://editor.swagger.io/) en kopieer de inhoud van de .swagger.yml file in de editor
 
