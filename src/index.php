@@ -24,6 +24,18 @@ header("Content-type: application/json; chartset=UTF-8");
 $uri = str_replace('/pokemon/Pok-dex', "", $_SERVER['REQUEST_URI']);
 $parts = explode("/", $uri);
 
+// Authorization key
+//if (sizeof($parts) === 2) {
+//    $keyParts = explode("?key=", $parts[1]);
+//    $key = end($keyParts);
+//    if ($key !== 'abc') {
+//        http_response_code(401);
+//        die('Wrong authorization key');
+//    }
+//
+//    $parts[1] = str_replace('?key=abc', '', $parts[1]);
+//}
+
 // toegestane api calls
 $allowedCollections = [
     'ability',
@@ -57,15 +69,15 @@ $controller->processRequest($_SERVER['REQUEST_METHOD'], $id);
 function chooseGateway(string $uri, Database $database): GatewayInterface
 {
     switch ($uri) {
-    case 'ability':
-        return new AbilityGateway($database);
-    case 'move':
-        return new MoveGateway($database);
-    case 'type':
-        return new TypeGateway($database);
-    case 'habitat':
-        return new HabitatGateway($database);
-    default:
-        return new PokemonGateway($database);
+        case 'ability':
+            return new AbilityGateway($database);
+        case 'move':
+            return new MoveGateway($database);
+        case 'type':
+            return new TypeGateway($database);
+        case 'habitat':
+            return new HabitatGateway($database);
+        default:
+            return new PokemonGateway($database);
     }
 }
