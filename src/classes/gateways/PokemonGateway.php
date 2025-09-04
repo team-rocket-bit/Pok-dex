@@ -53,14 +53,16 @@ class PokemonGateway implements GatewayInterface
         hidden_ability_id,
         primary_type_id,
         secondary_type_id,
-        habitat_id) VALUES (:name,
+        habitat_id,
+        image_id) VALUES (:name,
         :height,
         :weight,
         :primary_ability_id,
         :hidden_ability_id,
         :primary_type_id,
         :secondary_type_id,
-        :habitat_id)";
+        :habitat_id,
+        :image_id)";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -72,6 +74,7 @@ class PokemonGateway implements GatewayInterface
         $stmt->bindValue(':primary_type_id', $data["primary_type_id"], \PDO::PARAM_INT);
         $stmt->bindValue(':secondary_type_id', $data["secondary_type_id"] ?? null, \PDO::PARAM_INT);
         $stmt->bindValue(':habitat_id', $data["habitat_id"], \PDO::PARAM_INT);
+        $stmt->bindValue(':image_id', $data["image_id"], \PDO::PARAM_INT);
 
         $stmt->execute();
 
