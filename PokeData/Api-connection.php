@@ -89,7 +89,7 @@ foreach ($listData['results'] as $pokemon) {
     $insertPokemon->execute([
     ':name' => $details['name'],
     ':height' => $details['height'],
-    ':weight' => $details['weight'],
+        ':weight' => $details['weight'] / 10,
     ':primary_type_id' => $typeIds[0] ?? null,
     ':secondary_type_id' => $typeIds[1] ?? null,
     ':primary_ability_id' => $primaryAbilityId,
